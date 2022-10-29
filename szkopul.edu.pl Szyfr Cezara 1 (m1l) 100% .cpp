@@ -46,14 +46,9 @@ int main() {
 
     for(int i = 0; i <= ile-1; i++){
         string slowo = slowa[i];
-        for(int i=0; i<=slowo.length()-1; i++)
-        {
-            if(!isspace(slowo[i])){ // Sprawdzanie czy i element tablicy nie jest przypadkiem spacja no bo jak zaszyfrowac spacje?
+        for(int i=0; i<=slowo.length()-1; i++){
                 char litera = toupper(slowo[i]);
                 cout << szyfruj_litere(litera,klucz);
-            }
-            else
-                cout << " ";
         }
         cout << endl;
     }
