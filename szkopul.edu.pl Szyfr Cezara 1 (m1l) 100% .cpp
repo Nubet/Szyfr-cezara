@@ -11,8 +11,8 @@ int na_jakiej_pozycji(char litera, char alfabet[]){
 		for(int i = 0; i < 26; i++){
     		if(alfabet[i] == litera)
     			return pozycja;
-			else
-				pozycja++;
+		else
+			pozycja++;
 		}
 }
 char szyfruj_litere(char litera, int klucz){
@@ -21,12 +21,12 @@ char szyfruj_litere(char litera, int klucz){
 	char znak_zaszyfrowany;
 	int pozycja_podanej_litery_w_alfabecie = na_jakiej_pozycji(litera, alfabet_podstawowy);
 
-    if(pozycja_podanej_litery_w_alfabecie+klucz <= 25)
-        znak_zaszyfrowany = alfabet_podstawowy[pozycja_podanej_litery_w_alfabecie+klucz];
-    else
-        znak_zaszyfrowany = alfabet_podstawowy[klucz-(26-pozycja_podanej_litery_w_alfabecie)];
+   	 if(pozycja_podanej_litery_w_alfabecie+klucz <= 25)
+       		znak_zaszyfrowany = alfabet_podstawowy[pozycja_podanej_litery_w_alfabecie+klucz];
+   	 else
+         	znak_zaszyfrowany = alfabet_podstawowy[klucz-(26-pozycja_podanej_litery_w_alfabecie)];
 
-    return znak_zaszyfrowany;
+   	 return znak_zaszyfrowany;
 }
 
 
@@ -36,7 +36,7 @@ int main() {
     cin>>ile;
     cin>>klucz;
     if(klucz > 26)
-        klucz = klucz % 26;
+        klucz = klucz % 26; // jesli klucz jest rowny 26 to znaczy ze przesuwany o 0 (bo alfabet lacinski ma 26 znakow )jesli 27 to tak naprawde przesuwamy o 1 wiec sprawdzamy ile razy w podanym kluczu miesci nam sie 26 a cpp udostepnia nam modulo czyli reszte z dzielenia
 
     string slowa[ile];
     for(int i = 0; i <= ile-1; i++)
